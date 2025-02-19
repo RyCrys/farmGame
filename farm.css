@@ -1,0 +1,100 @@
+h1{
+    text-align: center;
+}
+
+.screen{
+    border-style: solid;
+    width: 75%;
+    height: 75vh;
+    padding: 10px;
+    margin: auto;
+}
+
+.screenRibbon{
+    display: flex;
+    gap:10px;
+    border-bottom-style: solid;
+    font-size: 25px;
+}
+
+.farms{
+    display:flex;
+    gap:15px;
+}
+
+.farm1{
+    border-style: solid;
+    height: 15vh;
+    width: 15%;
+    background-color: limegreen;
+    text-align: center;
+    font-size: 30px;
+}
+.farm1:hover{
+    background-color: rgb(18, 144, 18);
+}
+.farm2{
+    border-style: solid;
+    height: 25vh;
+    width: 25%;
+    background-color: orange;
+    text-align: center;
+    font-size: 30px;
+}
+.farm2:hover{
+    background-color: rgb(206, 135, 3);
+}
+.farm3{
+    border-style: solid;
+    height: 15vh;
+    width: 35%;
+    background-color: yellow;
+    text-align: center;
+    font-size: 30px;
+}
+.farm3:hover{
+    background-color: rgb(169, 169, 0);
+}
+.sideScreen{
+    border-style: solid;
+    width: 25%;
+    height: 75vh;
+    padding: 10px;
+    margin: auto;
+}
+
+.game{
+    display: flex;
+}
+
+
+.Buy{
+    visibility: hidden;
+    border-style: solid;
+    height: 70px;
+    width: 140px;
+    background-color: rgb(6, 195, 6);
+}
+
+.Buy:hover{
+    background-color: rgb(1, 152, 1);
+}
+.Crops{
+    display: flex;
+    grid-template-rows: auto;
+    gap: 15px;
+    visibility: hidden;
+}
+
+.crops{
+    border-style: solid;
+    width: 90px;
+    height: 65px;
+    text-align: center;
+    line-height: 65px;
+    background-color: rgb(214, 214, 0);
+}
+
+.crops:hover{
+    background-color: rgb(161, 161, 2);
+}

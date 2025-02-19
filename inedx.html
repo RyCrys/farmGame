@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Farming</title>
+    <link rel="stylesheet" href="farm.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <main>
+        <h1>Farming Sim</h1>  
+    </main>
+    <div class="game">
+        <div class="screen">
+    <div class="screenRibbon"> 
+      <p>Money:</p>
+      <p id="Money">1000</p>
+
+      <p>Time: </p>
+      <p id="Time">12:00</p>
+      <p>Day</p>
+      <p id="Day">1</p>
+      <p>Workers: </p>
+      <p id="Workers"></p>
+      <P id="Context"></P>
+    </div>
+    <div class="farms">
+    <div class="farm1" id="farm1" onclick="farm1()">
+     <P>Click to Crop</P>
+    </div>
+    <div class="farm2" id="farm2" onclick="farm2()">
+      <P id ="f2T">Buy $1000</P>
+    </div>
+    <div class="farm3" id="farm3" onclick="farm3()">
+      <P id =f3T>Buy $1500</P>
+    </div>
+    </div>
+  </div>
+  <div class ="sideScreen">
+    <h1 id="topText"></h1>
+    <p id="sideContext"></p>
+    <h1 id="Buy" class="Buy" onclick="buy()">Buy</h1>
+    <div class="Crops">
+      <p class="crops" id="crops">Wheat</p>
+      <p class="crops" id="crops">Corn</p>
+    </div>
+  </div>
+</div>
+    <script src="index.js"></script>
+  </body>
+</html>
