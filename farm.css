@@ -1,100 +1,187 @@
-h1{
-    text-align: center;
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif; /* Modern font */
 }
 
-.screen{
-    border-style: solid;
-    width: 75%;
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #87CEFA, #f5deb3); /* Sky-to-wheat gradient */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* Title */
+h1 {
+    text-align: center;
+    font-size: 3vw;
+    font-weight: bold;
+    color: #2E4F4F;
+    margin-bottom: 1vh;
+}
+
+/* Game Layout */
+.game {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90vw;
     height: 75vh;
-    padding: 10px;
-    margin: auto;
 }
 
-.screenRibbon{
-    display: flex;
-    gap:10px;
-    border-bottom-style: solid;
-    font-size: 25px;
-}
-
-.farms{
-    display:flex;
-    gap:15px;
-}
-
-.farm1{
-    border-style: solid;
-    height: 15vh;
-    width: 15%;
-    background-color: limegreen;
-    text-align: center;
-    font-size: 30px;
-}
-.farm1:hover{
-    background-color: rgb(18, 144, 18);
-}
-.farm2{
-    border-style: solid;
-    height: 25vh;
-    width: 25%;
-    background-color: orange;
-    text-align: center;
-    font-size: 30px;
-}
-.farm2:hover{
-    background-color: rgb(206, 135, 3);
-}
-.farm3{
-    border-style: solid;
-    height: 15vh;
-    width: 35%;
-    background-color: yellow;
-    text-align: center;
-    font-size: 30px;
-}
-.farm3:hover{
-    background-color: rgb(169, 169, 0);
-}
-.sideScreen{
-    border-style: solid;
-    width: 25%;
+/* Main Screen */
+.screen {
+    border: 3px solid #333;
+    background-color: rgba(255, 255, 255, 0.85); /* Slight transparency */
+    width: 60vw;
     height: 75vh;
-    padding: 10px;
-    margin: auto;
-}
-
-.game{
+    padding: 1vw;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 12px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-
-.Buy{
-    visibility: hidden;
-    border-style: solid;
-    height: 70px;
-    width: 140px;
-    background-color: rgb(6, 195, 6);
-}
-
-.Buy:hover{
-    background-color: rgb(1, 152, 1);
-}
-.Crops{
+/* Screen Ribbon */
+.screenRibbon {
     display: flex;
-    grid-template-rows: auto;
-    gap: 15px;
-    visibility: hidden;
+    gap: 1vw;
+    border-bottom: 3px solid #555;
+    font-size: 1.5vw;
+    padding-bottom: 0.5vh;
+    width: 100%;
+    justify-content: center;
+    font-weight: bold;
+    color: #2E4F4F;
 }
 
-.crops{
-    border-style: solid;
-    width: 90px;
-    height: 65px;
+/* Farm Plots */
+.farms {
+    display: flex;
+    gap: 2vw;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.farm1, .farm2, .farm3 {
+    border: 3px solid #444;
     text-align: center;
-    line-height: 65px;
-    background-color: rgb(214, 214, 0);
+    font-size: 1.5vw;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 12vh;
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
 }
 
-.crops:hover{
-    background-color: rgb(161, 161, 2);
+.farm1 {
+    background: linear-gradient(to bottom, #66C266, #228B22);
+    color: white;
+}
+.farm1:hover {
+    background: linear-gradient(to bottom, #228B22, #145A14);
+}
+
+.farm2 {
+    background: linear-gradient(to bottom, #FFA500, #CC7000);
+    color: white;
+}
+.farm2:hover {
+    background: linear-gradient(to bottom, #CC7000, #A35400);
+}
+
+.farm3 {
+    background: linear-gradient(to bottom, #FFD700, #B8860B);
+    color: black;
+}
+.farm3:hover {
+    background: linear-gradient(to bottom, #B8860B, #8B6508);
+}
+
+/* Side Panel */
+.sideScreen {
+    border: 3px solid #333;
+    background-color: rgba(255, 255, 255, 0.85);
+    width: 30vw;
+    height: 75vh;
+    padding: 1vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Buy Button */
+.Buy {
+    visibility: hidden;
+    border: 3px solid #444;
+    height: 8vh;
+    width: 18vw;
+    background: linear-gradient(to bottom, #32CD32, #228B22);
+    color: white;
+    font-size: 1.5vw;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.Buy:hover {
+    background: linear-gradient(to bottom, #228B22, #145A14);
+}
+
+/* Crop Selection */
+.Crops {
+    display: flex;
+    gap: 1.5vw;
+    visibility: hidden;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin-top: 2vh;
+}
+
+.crops {
+    border: 2px solid #333;
+    width: 10vw;
+    height: 7vh;
+    text-align: center;
+    line-height: 7vh;
+    font-size: 1.5vw;
+    font-weight: bold;
+    background: linear-gradient(to bottom, #DAA520, #B8860B);
+    color: white;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.crops:hover {
+    background: linear-gradient(to bottom, #B8860B, #8B6508);
+}
+
+/* Time Display */
+.time1 {
+    visibility: hidden;
+    background: linear-gradient(to bottom, #7FFFD4, #4682B4);
+    border: 3px solid #333;
+    width: 15vw;
+    height: 5vh;
+    font-size: 1.2vw;
+    text-align: center;
+    line-height: 5vh;
+    color: black;
+    font-weight: bold;
+    border-radius: 8px;
 }
