@@ -11,6 +11,11 @@ game = true;
 plot2 = false;
 plot3 = false;
 
+cornPrice = 8;
+wheatPrice = 3;
+
+plotSelected = 0;
+plotExpon = [1,2.3,1.7]
 update();
 
 function update(){
@@ -53,9 +58,44 @@ function infinite(){
         update();
     }, 1000);
 }
+function cropPrice() {
+    setTimeout(function () {
+        cropPrice();
+        cropPriceUpdate();
+        update();
+    }, 600);
+}
 
+function random(num, bool) {
+    let num2 = Math.floor(Math.random() * num) + 1;
+    
+    if (bool) {
+        let posNeg = Math.floor(Math.random() * 2) + 1;
+        console.log("Positive(1) or Negative(2): " + posNeg);
+        
+        if (posNeg === 2) {
+            num2 = -num2; 
+        }
+    }
+
+    console.log("Random number: " + num2);
+    return num2;
+}
+
+function cropPriceUpdate() {
+    wheatPrice += random(2, true);
+    if(wheatPrice < 1){
+        wheatPrice = 1;
+    }
+    cornPrice += random(3, true);
+    if(cornPrice < 1){
+        cornPrice = 1;
+    }
+}
+cropPrice()
 function farm1(){
     sideClear();
+    plotSelected =1;
     document.getElementById("Crops").style.visibility = "visible";
     document.getElementById("topText").innerHTML = "Plot One";
     document.getElementById("Buy").style.visibility = "hidden";
@@ -65,6 +105,7 @@ function farm1(){
 
 function farm2(){
     sideClear();
+    plotSelected =2;
     if(plot2 == false){
          document.getElementById("topText").innerHTML = "Plot Two";
          document.getElementById("sideContext").innerHTML ="Would you like to buy the plot for $1000";
@@ -79,6 +120,7 @@ function farm2(){
 
 function farm3(){
     sideClear();
+    plotSelected =3;
     if(plot3 == false){
          document.getElementById("topText").innerHTML = "Plot Three";
          document.getElementById("sideContext").innerHTML ="Would you like to buy the plot for $1500";
@@ -128,5 +170,14 @@ function sideClear(){
     document.getElementById("Buy").style.visibility = "hidden";
     document.getElementById("sideContext").innerHTML = "";
     document.getElementById("Buy").style.backgroundColor = "rgb(6, 195, 6)";
+}
+
+function grow(type){
+    if(type == "Wheat"){
+        document.getElementById("f1T").innerHTML = "Growing Wheat";
+        document.getElementById("time"+ plotSelected).style.visibility = "visible";
+    } else if(type == "Corn"){
+        document.getElementById("f1T").innerHTML = "Growing Corn";
+    }
 }
 infinite();
