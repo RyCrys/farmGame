@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Farming</title>
     <link rel="stylesheet" href="farm.css">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
   </head>
   <body>
     <main>
@@ -28,13 +27,16 @@
     </div>
     <div class="farms">
     <div class="farm1" id="farm1" onclick="farm1()">
-     <P>Click to Crop</P>
+     <P id="f1T">Click to Crop</P>
+     <p class="time1" id = "time1"></p>
     </div>
     <div class="farm2" id="farm2" onclick="farm2()">
       <P id ="f2T">Buy $1000</P>
+      <p class="time2" id = "time2"></p>
     </div>
     <div class="farm3" id="farm3" onclick="farm3()">
       <P id =f3T>Buy $1500</P>
+      <p class="time3" id = "time3"></p>
     </div>
     </div>
   </div>
@@ -42,9 +44,9 @@
     <h1 id="topText"></h1>
     <p id="sideContext"></p>
     <h1 id="Buy" class="Buy" onclick="buy()">Buy</h1>
-    <div class="Crops">
-      <p class="crops" id="crops">Wheat</p>
-      <p class="crops" id="crops">Corn</p>
+    <div class="Crops" id="Crops">
+      <p class="crops" id="crops" onclick="grow('Wheat')">Wheat</p>
+      <p class="crops" id="crops" onclick="grow('Corn')">Corn</p>
     </div>
   </div>
 </div>
